@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.xuancao.anchors.handygridview.CustomLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+    <com.xuancao.anchors.handygridview.HandyGridView
+        android:id="@+id/grid_tips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:numColumns="4"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:scrollbars="vertical"
+        android:stretchMode="columnWidth" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/recy_tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        app:tabMode="scrollable"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recy_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</com.xuancao.anchors.handygridview.CustomLinearLayout>

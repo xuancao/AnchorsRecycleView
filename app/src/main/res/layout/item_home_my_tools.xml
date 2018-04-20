@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/item_container">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon_img"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/icon_0"/>
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="2dp"
+            android:text="Item 0"
+            android:textColor="#999999"
+            android:textSize="12sp"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/delete_img"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingTop="3dp"
+        android:paddingRight="3dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:src="@mipmap/ic_my_tools_delete"
+        android:visibility="gone"/>
+</RelativeLayout>

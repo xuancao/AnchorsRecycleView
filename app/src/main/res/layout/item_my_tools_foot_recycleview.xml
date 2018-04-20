@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#cccccc"/>
+
+    <TextView
+        android:id="@+id/item_title"
+        android:text="娃哈哈"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:layout_height="30dp" />
+
+    <com.xuancao.anchors.CustomGridView
+        android:id="@+id/content_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:verticalSpacing="10dp"
+        android:numColumns="4"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp"
+        android:scrollbars="vertical"
+        android:stretchMode="columnWidth"/>
+
+</LinearLayout>
