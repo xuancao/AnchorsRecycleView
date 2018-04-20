@@ -7,3 +7,6 @@
 
 
 ![image](https://github.com/xuancao/AnchorsRecycleView/blob/master/anchorsRecycle.gif )
+
+
+此Demo只实现功能效果和逻辑用于项目中功能需求，暂未对代码风格进行优化，代码比较凌乱，望谅解！
