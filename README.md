@@ -6,4 +6,4 @@
 主页面布局特别简单明朗，效果如下：
 
 
-![image](https://github.com/xuancao/ListViewTablayout-master/blob/master/screen/2018-03-22%2014_41_41.gif )
+![image](https://github.com/xuancao/AnchorsRecycleView/blob/master/anchorsRecycle.gif )
