@@ -162,6 +162,8 @@ public class RecyMainActivity extends Activity {
         for (String item : navigationTag) {
             mTabLayout.addTab(mTabLayout.newTab().setText(item));
         }
+
+        onFirstTabClick();
     }
 
     private void initLinster() {
@@ -275,6 +277,38 @@ public class RecyMainActivity extends Activity {
         public void onTabReselected(TabLayout.Tab tab) {
         }
     };
+
+    /**
+     *  用于解决TabLayout点击第一个条目时偶尔的事件丢失问题
+     */
+    private void onFirstTabClick(){
+        for (int i = 0; i < mTabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = mTabLayout.getTabAt(i);
+            if (tab == null) return;
+            Class c = tab.getClass();
+            try {
+                //"mView"是Tab的私有属性名称(可查看TabLayout源码),类型是 TabView,TabLayout私有内部类。
+                Field field = c.getDeclaredField("mView");
+                field.setAccessible(true);
+                final View view = (View) field.get(tab);
+                if (view == null) return;
+                view.setTag(i);
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int position = (int) view.getTag();
+                        if (position == 0){ //等于0即点击第一个条目，有时会丢失点击事件，此处强行进行滑动指定位置操作
+                            tagFlag = false;
+                            mTabLayout.setScrollPosition(position, 0, true);
+                            smoothScrollToPosition(position);
+                        }
+                    }
+                });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private void smoothScrollToPosition(int n) {
         //先从RecyclerView的LayoutManager中获取第一项和最后一项的Position
